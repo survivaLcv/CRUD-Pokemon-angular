@@ -1,0 +1,41 @@
+<div class="row justify-sb">
+  <div class="search-bar pl-2">
+      <label class="pl-2" for="search">Listado de Pokemon</label>
+      <div class="search-pokemon">
+        <input class="form-control" type="text" name="Buscar" [(ngModel)]="searchText" autocomplete="off" placeholder="Buscar por nombre">
+      </div>
+  </div>
+
+  <div class="align-left align-items-end">
+      <button class="btn success-button" (click)="newPokemon()" >
+          <span>+ Nuevo</span>
+      </button>
+  </div>
+</div>
+
+<table *ngIf="lstPokemons.length >=0">
+  <thead>
+      <tr  >
+          <th class="text-center"> Nombre</th>
+          <th class="text-center"> Imagen</th>
+          <th class="text-center"> Ataque</th>
+          <th class="text-center"> Defensa</th>
+          <th class="text-center"> Acciones</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of lstPokemons | filter :searchText">
+          <td >{{item.name}}</td>
+          <td class="text-center">
+              <img class="pkmn-img" [src]="item.image" alt="">
+          </td>
+          <td class="text-center ">{{item.attack}}</td>
+          <td >{{item.defense}}</td>
+
+          <td class="text-center">
+              <img class="img-button" src="/assets/editar.png" (click)="updatePkm(item.id);" height="21px" width="21px">
+              <img class="img-button" src="/assets/borrar.png" (click)="deletePkm(item.id);" height="21px" width="21px" >
+          </td>
+      </tr>
+  </tbody>
+</table>

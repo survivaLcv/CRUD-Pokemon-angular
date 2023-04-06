@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+button {
+  &.btn {
+      &.success-button {
+          font-size: 15px;
+          background-color: #008CBA;
+          border-radius: 10px;
+          color: white;
+          height: 40px;
+          width: 110px;
+          outline: none !important;
+          box-shadow: none !important;
+          &:hover {
+              color: white !important;
+          }
+          &:active {
+              background-color: #f0f1f0;
+          }
+      }
+      &.cancel-button {
+        font-size: 15px;
+        background-color: #ff0000;
+        border-radius: 10px;
+        color: white;
+        height: 40px;
+        width: 110px;
+        outline: none !important;
+        box-shadow: none !important;
+        &:hover {
+            color: white !important;
+        }
+        &:active {
+            background-color: #f0f1f0;
+        }
+    }
+      &.dissabled-button {
+          width: 110px;
+          font-size: 15px;
+          border: 1px solid #c5c5c5;
+          background-color: white;
+          border-radius: 5px;
+          color: #3962e6;
+          height: 40px;
+          outline: none !important;
+          box-shadow: none !important;
+          &:hover {
+              color: #3962e6;
+          }
+          &:active {
+              background-color: #7e848a60;
+          }
+      }
+      &.outline-button {
+          border: 1px solid transparent;
+          background-color: white;
+          color: #c5c5c5 !important;
+          height: 40px;
+      }
+  }
+  &:active {
+      background-color: #c5c5c5;
+      color: white !important;
+  }
+  &:focus {
+      background-color: #c5c5c5 !important;
+      color: white !important;
+  }
+  &.btn-clear {
+      height: 38px;
+      width: 45px !important;
+      border: 1px solid #c5c5c5;
+      background-color: white;
+      position: relative;
+      border-radius: 5px !important;
+  }
+  &.outline-button {
+      border: 1px solid #c5c5c5;
+      background-color: white;
+      color: #000000 !important;
+      //font-size: 12px;
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:0.5rem;
+}
+.cabecera{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-titulo {
+  font-size: xx-large!important;
+}
+
+.justify-center{
+  justify-content: center;
+  display: flex !important;
+  margin: 14px;
+}
+.align-tr{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+.w-100{
+  width: 100% !important;
+}
+.justify-sa{
+  justify-content: space-around;
+}
+.justify-sb{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.align-r{
+  align-items: right;
+}
+.pl{
+  padding-left:1rem;
+}
+
+.search-pokemon {
+  padding: 10px 0 0 0px;
+}
+
+label.pl-2 {
+  font-size: large;
+  font-weight: bold;
+}
+
+
+input[type='range']::-webkit-slider-thumb {
+  background: #434343;
+}
+.align-items-end{
+  display:flex;
+  align-items: end;
+}
