@@ -36,7 +36,6 @@ export class FormPokemonComponent implements OnInit {
     this._pokemonServices.addPokemon(this.pokemonForm.value)
     .pipe(takeUntil(this.unsubscribe$)).subscribe({
       next: (res: any) => {
-        console.log('create pokemon', res);
         window.location.reload();
         this.reset();
       },
@@ -47,9 +46,7 @@ export class FormPokemonComponent implements OnInit {
   }
 
   reset() {
-    console.log("reset clic");
     this.pokemonForm.reset();
-    //window.location.reload();
     this.cancelarForm.emit(true);
   }
 

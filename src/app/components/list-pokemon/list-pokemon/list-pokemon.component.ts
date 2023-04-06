@@ -29,7 +29,6 @@ export class ListPokemonComponent implements OnInit {
         next: (res: any) => {
           this.error = false;
           this.lstPokemons=res;
-          console.log("lstPokemons",this.lstPokemons);
         },
         error: (error) => {
           console.log("Error ", error);
@@ -40,7 +39,6 @@ export class ListPokemonComponent implements OnInit {
   }
 
   newPokemon(){
-   console.log("Nuevo pokemon")
    this.isNewPokemon.emit(false)
   }
 
@@ -49,7 +47,6 @@ export class ListPokemonComponent implements OnInit {
     this._pokemonServices.getCurrentPokemon(id).subscribe({
       next: (res: any) => {
         this.error = false;
-        console.log('resp deleted', res);
         this.pokemonEmiter.emit(res);
         this.isNewPokemon.emit(true);
       },
@@ -63,10 +60,8 @@ export class ListPokemonComponent implements OnInit {
   }
 
   deletePkm(id:any){
-    console.log("deletePkm pokemon", id);
     this._pokemonServices.deletePokemon(id).subscribe({
       next: (res: any) => {
-        console.log('resp deleted', res);
         this.getAllPokemonts();
       },
       error: (error) => {

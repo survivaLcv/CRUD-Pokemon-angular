@@ -19,36 +19,29 @@ export class HomeComponent implements OnInit {
   }
 
   showForm(value :boolean){
-    console.log("value home" , value)
     this.isNewForm = value;
   }
 
   showFormEdit(value :boolean){
-    console.log("value showFormEdit" , value)
     this.isEditing = value;
   }
 
   showFormNew(value :boolean){
-    console.log("showFormNew home" , value)
     this.isNewForm = value;
   }
 
 
   pkmEmiter(pokemon : Pokemon){
-    console.log("pkm pkm" , pokemon)
     this.pokemonObj= pokemon;
   }
 
   sendPutPokemon(){
-    console.log("sendPutPokemon");
     let requestPkm = {
       ...this.pokemonObj
     }
 
-    console.log("requestPkm", this.pokemonObj);
     this._pokemonServices.updatePokemon(requestPkm.id, requestPkm).subscribe({
       next: (res: any) => {
-        console.log('resp updated', res);
         window.location.reload();
       },
       error: (error) => {
@@ -59,8 +52,6 @@ export class HomeComponent implements OnInit {
   }
 
   cancelar(){
-    console.log("cancelar ");
     this.isEditing = true;
-    console.log("isEditing ", this.isEditing);
   }
 }
